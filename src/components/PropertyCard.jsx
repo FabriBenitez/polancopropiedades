@@ -6,10 +6,7 @@ import './PropertyCard.css';
 
 export default function PropertyCard({ property }) {
   return (
-    <motion.div 
-      whileHover={{ y: -10 }}
-      className="property-card glass-panel"
-    >
+    <div className="property-card glass-panel">
       <Link to={`/propiedad/${property.id}`} className="property-image-wrapper">
         <img src={property.images[0]} alt={property.title} className="property-image" />
         <div className="property-badges">
@@ -31,6 +28,6 @@ export default function PropertyCard({ property }) {
           {property.features.parking > 0 && <div className="feature"><Car size={18} /> <span>{property.features.parking} Coch.</span></div>}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

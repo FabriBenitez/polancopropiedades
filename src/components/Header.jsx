@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import './Header.css';
 
 export default function Header() {
@@ -16,13 +16,11 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`header ${scrolled ? 'glass-nav' : ''}`}>
+    <header className={`header ${scrolled ? 'scrolled-nav' : ''}`}>
       <div className="container header-content">
         <Link to="/" className="logo">
-          <div className="logo-icon">
-            <Home size={24} color="var(--bg-deep)" />
-          </div>
-          <span className="logo-text">POLANCO</span>
+          {/* Mockup del logo original para mantener estética */}
+          <span className="logo-text">POLANCO <span style={{fontWeight: 300}}>PROPIEDADES</span></span>
         </Link>
         
         <nav className="desktop-nav">
@@ -30,7 +28,10 @@ export default function Header() {
           <Link to="/venta" className="nav-link">Venta</Link>
           <Link to="/alquiler" className="nav-link">Alquiler</Link>
           <Link to="/emprendimientos" className="nav-link">Emprendimientos</Link>
-          <Link to="/contacto" className="btn btn-gradient">Contacto</Link>
+          <div className="contact-info">
+            <span className="contact-item"><Phone size={14}/> 11 2626 8275</span>
+            <span className="contact-item"><Mail size={14}/> info@polancopropiedades.com</span>
+          </div>
         </nav>
 
         <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -40,7 +41,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div className={`mobile-nav ${mobileOpen ? 'open' : ''}`}>
-        <div className="mobile-nav-inner glass-panel">
+        <div className="mobile-nav-inner">
           <Link to="/" onClick={() => setMobileOpen(false)}>Inicio</Link>
           <Link to="/venta" onClick={() => setMobileOpen(false)}>Venta</Link>
           <Link to="/alquiler" onClick={() => setMobileOpen(false)}>Alquiler</Link>

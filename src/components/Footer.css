@@ -1,6 +1,6 @@
 .footer {
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border-light);
+  background: var(--bg-inverse);
+  color: #cccccc;
   padding-top: 4rem;
   margin-top: 4rem;
 }
@@ -12,9 +12,14 @@
   margin-bottom: 4rem;
 }
 
+.footer-brand .logo-text {
+  color: #ffffff;
+}
+
 .footer-brand .footer-desc {
   margin-top: 1rem;
   max-width: 300px;
+  color: #999999;
 }
 
 .social-links {
@@ -31,27 +36,29 @@
   height: 40px;
   border-radius: 50%;
   background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(255,255,255,0.1);
   transition: all 0.3s ease;
+  color: #ffffff;
 }
 
 .social-icon:hover {
-  background: var(--accent-gradient);
-  color: var(--bg-deep);
+  background: var(--accent-color);
+  color: #ffffff;
   border-color: transparent;
   transform: translateY(-3px);
 }
 
 .footer-links h3, .footer-contact h3 {
-  color: var(--text-primary);
+  color: #ffffff;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .footer-links a {
   display: block;
   margin-bottom: 0.75rem;
-  color: var(--text-secondary);
+  color: #999999;
 }
 
 .footer-links a:hover {
@@ -64,14 +71,16 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
+  color: #999999;
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid rgba(255,255,255,0.1);
   padding: 1.5rem 0;
   text-align: center;
-  color: var(--text-muted);
+  color: #666666;
   font-size: 0.85rem;
+  background: #000000;
 }
 
 @media (max-width: 768px) {

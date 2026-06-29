@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Hero.css';
 
+const images = [
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1600607687931-cebfad2114ce?auto=format&fit=crop&w=1920&q=80"
+];
+
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="hero">
-      <div className="hero-bg">
-        <div className="hero-glow"></div>
+      <div className="hero-slider">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentImage}
+            src={images[currentImage]}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="hero-bg-img"
+            alt="Polanco Propiedades Banner"
+          />
+        </AnimatePresence>
+        <div className="hero-overlay"></div>
       </div>
       
       <div className="container hero-content">
@@ -17,23 +44,14 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="hero-title"
         >
-          Encuentre su <br/><span className="text-gradient">Propiedad Ideal</span>
+          ENCUENTRE SU<br/><span className="text-gold">PROPIEDAD</span>
         </motion.h1>
-        
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="hero-subtitle"
-        >
-          Experiencia premium en bienes raíces. Descubra propiedades excepcionales con nuestro buscador avanzado.
-        </motion.p>
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="search-box glass-panel"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="search-box"
         >
           <div className="search-tabs">
             <button className="search-tab active">Venta</button>
@@ -49,7 +67,7 @@ export default function Hero() {
               <option value="terreno">Terreno</option>
             </select>
             
-            <input type="text" className="search-input" placeholder="Ubicación o Barrio..." />
+            <input type="text" className="search-input" placeholder="Buscar por calle o código" />
             
             <button className="btn btn-gradient search-btn">
               <Search size={20} />

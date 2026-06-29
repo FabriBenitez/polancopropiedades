@@ -22,13 +22,13 @@ export default function PropertyDetail() {
         <img src={property.images[0]} alt={property.title} className="detail-hero-bg" />
         <div className="detail-hero-overlay"></div>
         <div className="container detail-hero-content">
-          <Link to="/" className="btn btn-outline back-btn"><ArrowLeft size={18} /> Volver</Link>
+          <Link to="/" className="btn btn-outline back-btn" style={{color: '#fff', borderColor: '#fff'}}><ArrowLeft size={18} /> Volver</Link>
           <div className="detail-badges">
             <span className="badge badge-op">{property.operation}</span>
-            <span className="badge badge-type">{property.type}</span>
+            <span className="badge badge-type" style={{background: 'rgba(255,255,255,0.2)', color: '#fff'}}>{property.type}</span>
           </div>
-          <h1 className="detail-title">{property.title}</h1>
-          <p className="detail-address"><MapPin size={20} /> {property.address}, {property.neighborhood}</p>
+          <h1 className="detail-title" style={{color: '#fff'}}>{property.title}</h1>
+          <p className="detail-address" style={{color: '#eee'}}><MapPin size={20} /> {property.address}, {property.neighborhood}</p>
         </div>
       </div>
 
