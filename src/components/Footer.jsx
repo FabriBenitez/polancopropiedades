@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react';
+import { Home, Globe, MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
@@ -18,8 +18,7 @@ export default function Footer() {
             Encuentre su propiedad ideal con nuestro servicio premium de bienes raíces.
           </p>
           <div className="social-links">
-            <a href="#" className="social-icon"><Facebook size={20} /></a>
-            <a href="#" className="social-icon"><Instagram size={20} /></a>
+            <a href="#" className="social-icon"><Globe size={20} /></a>
           </div>
         </div>
         
