@@ -1,13 +1,318 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>polancopropiedades</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polanco Propiedades | Inmobiliaria Premium</title>
+    <meta name="description" content="Descubra propiedades excepcionales con Polanco Propiedades. Especialistas en venta y alquiler de inmuebles de lujo.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Polanco Propiedades | Inmobiliaria Premium">
+    <meta property="og:description" content="Encuentre su propiedad ideal con nuestro servicio premium de bienes raíces.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS via CDN for vanilla JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: '#000000',
+                light: '#ffffff',
+                accent: '#988864',
+                accentHover: '#bdae8b',
+                gray: '#f5f5f7',
+                textGray: '#86868b'
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'zoom-in': 'zoomIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              zoomIn: {
+                '0%': { transform: 'scale(1.05)' },
+                '100%': { transform: 'scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .glass-header {
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      .text-balance { text-wrap: balance; }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+    
+    <!-- Icons (Lucide) via CDN for vanilla JS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-gray overflow-x-hidden">
+
+    <!-- Header / Navbar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight text-brand-dark transition-colors" id="logo">
+                POLANCO <span class="font-light">PROPIEDADES</span>
+            </a>
+            
+            <nav class="hidden md:flex gap-8">
+                <a href="#venta" class="text-sm font-medium hover:text-brand-accent transition-colors">Venta</a>
+                <a href="#alquiler" class="text-sm font-medium hover:text-brand-accent transition-colors">Alquiler</a>
+                <a href="#emprendimientos" class="text-sm font-medium hover:text-brand-accent transition-colors">Emprendimientos</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-6">
+                <a href="tel:1126268275" class="text-sm font-medium flex items-center gap-2 hover:text-brand-accent transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i> 11 2626 8275
+                </a>
+                <a href="#contacto" class="bg-brand-dark text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-accent transition-all transform hover:-translate-y-0.5 shadow-lg">
+                    Contactar
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-brand-dark" id="mobile-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section (Apple/Tesla Style) -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 bg-black">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" 
+                 alt="Propiedad de lujo" 
+                 class="w-full h-full object-cover opacity-60 animate-zoom-in">
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center px-6 max-w-4xl mt-16 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight text-balance mb-6 drop-shadow-lg">
+                El nuevo estándar en <br><span class="text-brand-accent">bienes raíces</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 font-light max-w-2xl mx-auto drop-shadow-md text-balance">
+                Descubra propiedades excepcionales seleccionadas para los estilos de vida más exigentes.
+            </p>
+            
+            <!-- Buscador Integrado (Minimalista) -->
+            <div class="bg-white/95 backdrop-blur-xl p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl mx-auto mx-4">
+                <select class="px-6 py-4 bg-transparent border-none outline-none text-brand-dark font-medium w-full md:w-auto focus:ring-0 cursor-pointer">
+                    <option value="">Operación</option>
+                    <option value="venta">Venta</option>
+                    <option value="alquiler">Alquiler</option>
+                </select>
+                <div class="hidden md:block w-px bg-gray-200 my-2"></div>
+                <input type="text" placeholder="¿Dónde desea vivir?" class="px-6 py-4 bg-transparent border-none outline-none w-full text-brand-dark placeholder-brand-textGray focus:ring-0">
+                <button class="bg-brand-accent text-white px-8 py-4 rounded-xl font-medium hover:bg-brand-accentHover transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="search" class="w-5 h-5"></i> Buscar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Propiedades Destacadas (Stripe Style Cards) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto" id="venta">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Propiedades Destacadas</h2>
+            <p class="text-brand-textGray text-lg">Selección exclusiva de nuestras mejores residencias.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <a href="#" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Penthouse" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 flex gap-2">
+                        <span class="bg-white/90 backdrop-blur text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Venta</span>
+                        <span class="bg-brand-accent text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Destacado</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold mb-2 text-brand-dark group-hover:text-brand-accent transition-colors">Penthouse de Lujo</h3>
+                    <p class="text-brand-textGray flex items-center gap-2 text-sm mb-6">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Palermo, Buenos Aires
+                    </p>
+                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
+                        <div class="flex gap-4 text-brand-textGray text-sm">
+                            <span class="flex items-center gap-1"><i data-lucide="bed-double" class="w-4 h-4"></i> 4</span>
+                            <span class="flex items-center gap-1"><i data-lucide="bath" class="w-4 h-4"></i> 3</span>
+                            <span class="flex items-center gap-1"><i data-lucide="square" class="w-4 h-4"></i> 180m²</span>
+                        </div>
+                        <span class="font-bold text-lg text-brand-dark">USD 450.000</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="#" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal" style="transition-delay: 100ms;">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Casa" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 flex gap-2">
+                        <span class="bg-white/90 backdrop-blur text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Venta</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold mb-2 text-brand-dark group-hover:text-brand-accent transition-colors">Casa Minimalista Moderna</h3>
+                    <p class="text-brand-textGray flex items-center gap-2 text-sm mb-6">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Nordelta, Buenos Aires
+                    </p>
+                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
+                        <div class="flex gap-4 text-brand-textGray text-sm">
+                            <span class="flex items-center gap-1"><i data-lucide="bed-double" class="w-4 h-4"></i> 5</span>
+                            <span class="flex items-center gap-1"><i data-lucide="bath" class="w-4 h-4"></i> 4</span>
+                            <span class="flex items-center gap-1"><i data-lucide="square" class="w-4 h-4"></i> 320m²</span>
+                        </div>
+                        <span class="font-bold text-lg text-brand-dark">USD 620.000</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="#" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal" style="transition-delay: 200ms;">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Oficina" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 flex gap-2">
+                        <span class="bg-brand-dark/90 text-white backdrop-blur text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Alquiler</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold mb-2 text-brand-dark group-hover:text-brand-accent transition-colors">Oficina Premium</h3>
+                    <p class="text-brand-textGray flex items-center gap-2 text-sm mb-6">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Puerto Madero, CABA
+                    </p>
+                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
+                        <div class="flex gap-4 text-brand-textGray text-sm">
+                            <span class="flex items-center gap-1"><i data-lucide="bed-double" class="w-4 h-4"></i> 3</span>
+                            <span class="flex items-center gap-1"><i data-lucide="bath" class="w-4 h-4"></i> 2</span>
+                            <span class="flex items-center gap-1"><i data-lucide="square" class="w-4 h-4"></i> 120m²</span>
+                        </div>
+                        <span class="font-bold text-lg text-brand-dark">USD 2.500 <span class="text-sm font-normal text-brand-textGray">/mes</span></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="text-center mt-12 reveal">
+            <button class="bg-white border border-gray-200 text-brand-dark px-8 py-4 rounded-full font-medium hover:border-brand-dark hover:bg-gray-50 transition-all shadow-sm">
+                Ver todas las propiedades
+            </button>
+        </div>
+    </section>
+
+    <!-- Empresa (Apple Style Text Focus) -->
+    <section class="bg-white py-32 px-6" id="empresa">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8 text-balance">
+                Más que una inmobiliaria, <br>somos <span class="text-brand-accent">asesores de confianza.</span>
+            </h2>
+            <p class="text-xl text-brand-textGray leading-relaxed font-light text-balance mb-12">
+                En Polanco Propiedades combinamos tecnología de vanguardia con un servicio personalizado 
+                y exclusivo. Nuestra misión es hacer que el proceso de compra, venta o alquiler sea 
+                una experiencia completamente fluida y transparente.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-12">
+                <div>
+                    <div class="text-4xl font-bold text-brand-dark mb-2">15+</div>
+                    <div class="text-sm text-brand-textGray font-medium">Años de Exp.</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-brand-dark mb-2">500+</div>
+                    <div class="text-sm text-brand-textGray font-medium">Propiedades</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-brand-dark mb-2">2k+</div>
+                    <div class="text-sm text-brand-textGray font-medium">Clientes Felices</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-brand-dark mb-2">100%</div>
+                    <div class="text-sm text-brand-textGray font-medium">Compromiso</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+            <div class="md:col-span-1">
+                <a href="#" class="text-2xl font-bold tracking-tight text-white block mb-6">
+                    POLANCO <br><span class="font-light text-brand-accent">PROPIEDADES</span>
+                </a>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    El servicio inmobiliario definitivo para quienes buscan excelencia, diseño y exclusividad.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-6 text-lg">Servicios</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Venta de Inmuebles</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Alquileres</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Emprendimientos</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Tasaciones</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-6 text-lg">La Empresa</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Trabajá con nosotros</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Aviso Legal</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-6 text-lg">Contacto</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4"></i> 11 2626 8275</li>
+                    <li class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4"></i> info@polancopropiedades.com</li>
+                    <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4"></i> Buenos Aires, Argentina</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>&copy; 2026 Polanco Propiedades. Todos los derechos reservados.</p>
+            <p class="mt-2 md:mt-0">Diseñado con excelencia.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5491126268275" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all z-50 group">
+        <i data-lucide="message-circle" class="text-white w-7 h-7"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-16 bg-white text-brand-dark px-3 py-1.5 rounded-lg text-sm font-medium shadow-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+            ¡Chateá con nosotros!
+        </span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="./src/script.js"></script>
+</body>
 </html>
