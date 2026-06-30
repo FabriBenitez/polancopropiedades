@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajá con nosotros | Polanco Propiedades</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { dark: '#000000', light: '#ffffff', accent: '#988864', accentHover: '#bdae8b', gray: '#f5f5f7', textGray: '#86868b' }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .glass-header { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+      .text-balance { text-wrap: balance; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-gray overflow-x-hidden pt-24 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 py-4 glass-header">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-dark transition-colors">
+                POLANCO <span class="font-light">PROPIEDADES</span>
+            </a>
+            
+            <nav class="hidden md:flex gap-6">
+                <a href="index.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Inicio</a>
+                <a href="empresa.html" class="text-sm font-medium hover:text-brand-accent transition-colors">La Empresa</a>
+                <a href="venta.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Venta</a>
+                <a href="alquiler.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Alquiler</a>
+                <a href="emprendimientos.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Emprendimientos</a>
+                <a href="tasacion.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Tasación</a>
+                <a href="trabaja.html" class="text-sm font-medium text-brand-accent transition-colors">Trabajá con nosotros</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contacto.html" class="bg-brand-dark text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-accent transition-all transform hover:-translate-y-0.5 shadow-lg">Contacto</a>
+            </div>
+            <button class="md:hidden text-brand-dark"><i data-lucide="menu"></i></button>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow flex items-center justify-center py-20 px-6">
+        <div class="max-w-4xl mx-auto bg-white p-12 md:p-20 rounded-[2.5rem] shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-gray-100 text-center">
+            <div class="w-20 h-20 bg-brand-gray rounded-full flex items-center justify-center mx-auto mb-8 text-brand-accent">
+                <i data-lucide="users" class="w-10 h-10"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-8 text-brand-dark">Sumate a nuestro Equipo</h1>
+            
+            <div class="text-lg text-gray-600 leading-relaxed font-light mb-12 space-y-6 text-left">
+                <p>
+                    En Polanco creemos que una inmobiliaria se construye a partir de las personas que la representan.
+                </p>
+                <p>
+                    Buscamos profesionales con iniciativa, compromiso y ganas de crecer en un entorno dinámico, moderno y enfocado en brindar una experiencia diferente dentro del mercado inmobiliario.
+                </p>
+                <p>
+                    Valoramos el trabajo en equipo, la atención personalizada y una mirada actual del real estate, combinando trayectoria, confianza y estrategias innovadoras de marketing y comunicación.
+                </p>
+                <p>
+                    Si te interesa desarrollarte en una inmobiliaria en crecimiento, con visión profesional y foco en la calidad de servicio, nos encantaría conocerte.
+                </p>
+            </div>
+
+            <div class="bg-brand-gray p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-1">Enviá tu CV a</h3>
+                    <a href="mailto:info@polancopropiedades.com" class="text-brand-accent font-medium text-lg hover:underline">info@polancopropiedades.com</a>
+                </div>
+                <a href="mailto:info@polancopropiedades.com" class="bg-brand-dark text-white px-8 py-4 rounded-xl font-medium hover:bg-brand-accent transition-all flex items-center justify-center gap-2 shadow-lg transform hover:-translate-y-1">
+                    <i data-lucide="mail"></i> Enviar Correo
+                </a>
+            </div>
+            <p class="mt-8 font-bold text-brand-dark text-xl">Sumate a Polanco y crezcamos juntos.</p>
+        </div>
+    </main>
+
+    <!-- Footer Simple -->
+    <footer class="bg-white border-t border-gray-200 py-8 px-6 text-center text-brand-textGray text-sm mt-auto">
+        <p>&copy; 2026 Polanco Propiedades. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+    </script>
+</body>
+</html>

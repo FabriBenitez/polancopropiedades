@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Empresa | Polanco Propiedades</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { dark: '#000000', light: '#ffffff', accent: '#988864', accentHover: '#bdae8b', gray: '#f5f5f7', textGray: '#86868b' }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .glass-header { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+      .text-balance { text-wrap: balance; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white overflow-x-hidden pt-24">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 py-4 glass-header">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-dark transition-colors">
+                POLANCO <span class="font-light">PROPIEDADES</span>
+            </a>
+            
+            <nav class="hidden md:flex gap-6">
+                <a href="index.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Inicio</a>
+                <a href="empresa.html" class="text-sm font-medium text-brand-accent transition-colors">La Empresa</a>
+                <a href="venta.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Venta</a>
+                <a href="alquiler.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Alquiler</a>
+                <a href="emprendimientos.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Emprendimientos</a>
+                <a href="tasacion.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Tasación</a>
+                <a href="trabaja.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Trabajá con nosotros</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contacto.html" class="bg-brand-dark text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-accent transition-all transform hover:-translate-y-0.5 shadow-lg">Contacto</a>
+            </div>
+            <button class="md:hidden text-brand-dark"><i data-lucide="menu"></i></button>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="max-w-4xl mx-auto px-6 py-20">
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-8 text-brand-dark">Somos Polanco Propiedades</h1>
+        
+        <p class="text-xl text-brand-textGray leading-relaxed font-light text-balance mb-16">
+            Expertos inmobiliarios apasionados por el servicio. En Polanco, te acompañamos de principio a fin, cuidando tus intereses con honestidad y profesionalismo. Tu tranquilidad es nuestra prioridad. ¿Listo para dar el siguiente paso?
+        </p>
+
+        <div class="space-y-16">
+            <div>
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Misión</h2>
+                <p class="text-lg text-gray-600 leading-relaxed font-light mb-4">
+                    En Polanco nos especializamos en la gestión integral de propiedades, ofreciendo asesoramiento estratégico tanto a compradores como a vendedores, comprometidos con la excelencia y la transparencia.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed font-light mb-4">
+                    Nuestra misión es maximizar el valor de tu inversión a través de un servicio profesional, tecnología de punta y un profundo conocimiento del mercado inmobiliario actual.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed font-light mb-4">
+                    Nos destacamos por nuestra ética, capacidad de negociación y por ser el puente entre el patrimonio de nuestros clientes y el dinamismo del mercado.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed font-light">
+                    Brindamos un servicio claro y realista, asegurando transacciones seguras y beneficiosas para todas las partes.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Visión</h2>
+                <p class="text-lg text-gray-600 leading-relaxed font-light">
+                    Ser el referente más confiable del sector inmobiliario, basado en la excelencia, la innovación y el compromiso con la comunidad.
+                </p>
+            </div>
+
+            <div class="bg-brand-gray p-10 rounded-3xl border border-gray-100">
+                <h2 class="text-3xl font-bold text-brand-dark mb-6">Valores</h2>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <div class="text-center"><i data-lucide="shield-check" class="w-8 h-8 text-brand-accent mx-auto mb-2"></i><span class="font-medium text-brand-dark">Integridad</span></div>
+                    <div class="text-center"><i data-lucide="award" class="w-8 h-8 text-brand-accent mx-auto mb-2"></i><span class="font-medium text-brand-dark">Excelencia</span></div>
+                    <div class="text-center"><i data-lucide="eye-off" class="w-8 h-8 text-brand-accent mx-auto mb-2"></i><span class="font-medium text-brand-dark">Discreción</span></div>
+                    <div class="text-center"><i data-lucide="heart" class="w-8 h-8 text-brand-accent mx-auto mb-2"></i><span class="font-medium text-brand-dark">Pasión</span></div>
+                    <div class="text-center"><i data-lucide="lightbulb" class="w-8 h-8 text-brand-accent mx-auto mb-2"></i><span class="font-medium text-brand-dark">Innovación</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="bg-white border-t border-gray-200 py-8 px-6 text-center text-brand-textGray text-sm mt-12">
+        <p>&copy; 2026 Polanco Propiedades. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+    </script>
+</body>
+</html>

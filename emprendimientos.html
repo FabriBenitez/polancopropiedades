@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprendimientos | Polanco Propiedades</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { dark: '#000000', light: '#ffffff', accent: '#988864', accentHover: '#bdae8b', gray: '#f5f5f7', textGray: '#86868b' }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .glass-header { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+      .text-balance { text-wrap: balance; }
+      .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-gray overflow-x-hidden pt-24 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 py-4 glass-header">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-dark transition-colors">
+                POLANCO <span class="font-light">PROPIEDADES</span>
+            </a>
+            
+            <nav class="hidden md:flex gap-6">
+                <a href="index.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Inicio</a>
+                <a href="empresa.html" class="text-sm font-medium hover:text-brand-accent transition-colors">La Empresa</a>
+                <a href="venta.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Venta</a>
+                <a href="alquiler.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Alquiler</a>
+                <a href="emprendimientos.html" class="text-sm font-medium text-brand-accent transition-colors">Emprendimientos</a>
+                <a href="tasacion.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Tasación</a>
+                <a href="trabaja.html" class="text-sm font-medium hover:text-brand-accent transition-colors">Trabajá con nosotros</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contacto.html" class="bg-brand-dark text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-accent transition-all transform hover:-translate-y-0.5 shadow-lg">Contacto</a>
+            </div>
+            <button class="md:hidden text-brand-dark"><i data-lucide="menu"></i></button>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-12 w-full">
+        <h1 class="text-3xl font-bold text-brand-dark mb-8 uppercase tracking-widest border-b border-gray-200 pb-4">Emprendimientos</h1>
+        
+        <div class="space-y-8">
+            <!-- Emprendimiento 1 -->
+            <a href="#" class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col lg:flex-row h-auto lg:h-80">
+                <!-- Image -->
+                <div class="lg:w-2/5 h-64 lg:h-full relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600607687931-cebfad2114ce?auto=format&fit=crop&w=800&q=80" alt="Black Libertador" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Details -->
+                <div class="lg:w-3/5 p-8 flex flex-col justify-center">
+                    <p class="text-sm text-brand-textGray mb-1">Núñez, Capital Federal</p>
+                    <h2 class="text-3xl font-bold text-brand-dark mb-1 group-hover:text-brand-accent transition-colors">BLACK LIBERTADOR</h2>
+                    <p class="text-lg text-brand-textGray mb-4 font-light">Del Libertador al 8100</p>
+                    
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                        Edificio de categoría, en esquina, ubicado en el corazón del barrio de Núñez, con vistas al río y a la ciudad. Exclusivas unidades de 2, 3 y 4 ambientes con amplios balcones aterrazados que integran el exterior a la vida cotidiana. Terminaciones de alta calidad, amenities y una excelente ubicación para vivir rodeado de confort. Piscina con borde infinito Solarium Gimnasio SUM Sector parrillas PROYECTO DEL ESTUDIO AIZENSON
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md border border-gray-200">Ref. PBU72544</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md border border-gray-200">Entrega: Junio 2027</span>
+                        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-1 rounded">Aire Acondicionado individual</span>
+                        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-1 rounded">Alarma</span>
+                        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-1 rounded">Amoblado</span>
+                        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-1 rounded">Gimnasio</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Emprendimiento 2 -->
+            <a href="#" class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col lg:flex-row h-auto lg:h-80">
+                <!-- Image -->
+                <div class="lg:w-2/5 h-64 lg:h-full relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Black Sucre" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Details -->
+                <div class="lg:w-3/5 p-8 flex flex-col justify-center">
+                    <p class="text-sm text-brand-textGray mb-1">Belgrano, Capital Federal</p>
+                    <h2 class="text-3xl font-bold text-brand-dark mb-1 group-hover:text-brand-accent transition-colors">BLACK SUCRE</h2>
+                    <p class="text-lg text-brand-textGray mb-4 font-light">Mcal. Antonio José de Sucre 706</p>
+                    
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                        Emprendimiento Premium y exclusivo ubicado en la mejor zona del Bajo Belgrano, en las calles Sucre y Castañeda, una de las zonas residenciales más buscadas de la ciudad. Combina diseño contemporáneo, confort y calidad constructiva de primer nivel. El edificio cuenta 9 pisos, más terraza y 3 subsuelos. Cuenta con 38 unidades de 3 y 4 ambientes, espacios amplios, luminosos y terminaciones de excelencia. Hay 4 tipologías diferentes: Plaza, Castañeda, Sucre y Golf, que van desde los 120M2 hasta 300M2.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md border border-gray-200">Ref. PBU72290</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md border border-gray-200">Entrega: Marzo 2027</span>
+                        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-1 rounded">Calefacción</span>
+                        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-1 rounded">Gimnasio</span>
+                        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-1 rounded">Parrilla</span>
+                        <span class="bg-gray-50 text-gray-500 text-xs px-2 py-1 rounded">SUM</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer Simple -->
+    <footer class="bg-white border-t border-gray-200 py-8 px-6 text-center text-brand-textGray text-sm mt-auto">
+        <p>&copy; 2026 Polanco Propiedades. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+    </script>
+</body>
+</html>
