@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-brand-dark bg-brand-light;
+  }
+}
+
+@layer utilities {
+  .glass-header {
+    @apply bg-white/70 backdrop-blur-md border-b border-white/20 shadow-[0_1px_3px_rgba(0,0,0,0.05)];
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
