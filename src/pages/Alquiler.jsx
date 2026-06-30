@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { Search, MapPin, BedDouble, Bath, Square } from 'lucide-react';
 
 const s = {
   page: { paddingTop: '140px', paddingBottom: '64px', background: '#f5f5f7', minHeight: '100vh' },
@@ -42,7 +42,7 @@ export default function Alquiler() {
         </div>
         <div style={s.layout}>
           <aside style={s.sidebar}>
-            <div style={s.sidebarTitle}>🔍 Filtros</div>
+            <div style={s.sidebarTitle}><Search size={18} /> Filtros</div>
             <label style={s.label}>Moneda</label>
             <select style={s.select}><option>USD - Dólares</option><option>ARS - Pesos</option></select>
             <label style={s.label}>Tipo de Propiedad</label>
@@ -61,12 +61,12 @@ export default function Alquiler() {
                 </div>
                 <div style={s.cardBody}>
                   <h3 style={s.cardTitle}>{p.title}</h3>
-                  <p style={s.cardLoc}>📍 {p.location}</p>
+                  <p style={s.cardLoc}><MapPin size={14} style={{color: '#988864'}} /> {p.location}</p>
                   <p style={s.price}>{p.price}</p>
                   <div style={s.statsRow}>
-                    <div style={s.stat}><span style={{color:'#988864'}}>🛏</span>{p.beds} Dorm</div>
-                    <div style={{...s.stat, borderLeft:'1px solid #f0f0f0', borderRight:'1px solid #f0f0f0'}}><span style={{color:'#988864'}}>🚿</span>{p.baths} Baños</div>
-                    <div style={s.stat}><span style={{color:'#988864'}}>⬛</span>{p.sqm} m²</div>
+                    <div style={s.stat}><BedDouble size={16} style={{color:'#988864'}}/>{p.beds} Dorm</div>
+                    <div style={{...s.stat, borderLeft:'1px solid #f0f0f0', borderRight:'1px solid #f0f0f0'}}><Bath size={16} style={{color:'#988864'}}/>{p.baths} Baños</div>
+                    <div style={s.stat}><Square size={16} style={{color:'#988864'}}/>{p.sqm} m²</div>
                   </div>
                 </div>
               </Link>

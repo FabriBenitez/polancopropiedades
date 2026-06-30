@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { MapPin, CheckCircle2 } from 'lucide-react';
 
 const s = {
   page: { paddingTop: '140px', paddingBottom: '64px', background: '#f5f5f7', minHeight: '100vh' },
@@ -52,7 +52,7 @@ export default function Emprendimientos() {
               <div style={s.body}>
                 <h2 style={s.title}>{emp.title}</h2>
                 <div style={s.meta}>
-                  <span style={s.metaItem}>📍 {emp.location}</span>
+                  <span style={s.metaItem}><MapPin size={16} style={{color: '#988864'}}/> {emp.location}</span>
                   <span style={s.deliveryTag}>Entrega: {emp.delivery}</span>
                 </div>
                 <p style={s.desc}>{emp.description}</p>
@@ -60,7 +60,7 @@ export default function Emprendimientos() {
                 <div style={s.amenitiesGrid}>
                   {emp.amenities.map((a, i) => (
                     <div key={i} style={s.amenityItem}>
-                      <span style={s.checkIcon}>✔</span> {a}
+                      <span style={s.checkIcon}><CheckCircle2 size={16}/></span> {a}
                     </div>
                   ))}
                 </div>

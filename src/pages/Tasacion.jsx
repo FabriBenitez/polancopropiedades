@@ -1,4 +1,5 @@
 import React from 'react';
+import { Calculator } from 'lucide-react';
 
 const s = {
   page: { paddingTop: '140px', paddingBottom: '64px', background: '#fff', minHeight: '100vh' },
@@ -25,7 +26,7 @@ export default function Tasacion() {
       <div style={s.wrapper}>
         <div style={s.layout}>
           <div style={s.left}>
-            <div style={s.icon}>🧮</div>
+            <div style={s.icon}><Calculator size={36} strokeWidth={1.5} color="#000" /></div>
             <h1 style={s.h1}>Conocé el Valor Real<br/>de tu Propiedad</h1>
             <p style={s.desc}>
               Nuestro equipo de expertos realiza una evaluación exhaustiva del mercado, características de tu inmueble y tendencias actuales para entregarte una tasación precisa y profesional.

@@ -1,4 +1,5 @@
 import React from 'react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 const s = {
   page: { paddingTop: '140px', paddingBottom: '64px', background: '#f5f5f7', minHeight: '100vh' },
@@ -28,21 +29,21 @@ export default function Contacto() {
           <div style={s.left}>
             <h1 style={s.h1}>Estamos para escucharte</h1>
             <div style={s.infoBlock}>
-              <div style={s.infoIcon}>📍</div>
+              <div style={s.infoIcon}><MapPin size={24} color="#000" /></div>
               <div>
                 <p style={s.infoLabel}>Nuestras Oficinas</p>
                 <p style={s.infoText}>Av. del Libertador 1234, Piso 5<br/>C1428 CABA, Argentina</p>
               </div>
             </div>
             <div style={s.infoBlock}>
-              <div style={s.infoIcon}>📞</div>
+              <div style={s.infoIcon}><Phone size={24} color="#000" /></div>
               <div>
                 <p style={s.infoLabel}>Teléfono</p>
                 <p style={s.infoText}>+54 9 11 2626-8275</p>
               </div>
             </div>
             <div style={s.infoBlock}>
-              <div style={s.infoIcon}>✉</div>
+              <div style={s.infoIcon}><Mail size={24} color="#000" /></div>
               <div>
                 <p style={s.infoLabel}>Email</p>
                 <p style={s.infoText}>info@polancopropiedades.com</p>
