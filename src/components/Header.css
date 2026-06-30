@@ -28,24 +28,26 @@
 .logo-text {
   color: #ffffff;
   font-family: var(--font-alt);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   letter-spacing: 0.05em;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .nav-link {
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #ffffff;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -70,9 +72,10 @@
 .contact-info {
   display: flex;
   gap: 1rem;
-  margin-left: 2rem;
-  padding-left: 2rem;
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
   border-left: 1px solid rgba(255,255,255,0.2);
+  white-space: nowrap;
 }
 
 .contact-item {
@@ -80,7 +83,7 @@
   align-items: center;
   gap: 0.5rem;
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .mobile-toggle {
@@ -143,13 +146,13 @@
   text-transform: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .contact-info {
     display: none;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .desktop-nav {
     display: none;
   }
