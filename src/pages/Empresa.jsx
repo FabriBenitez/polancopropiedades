@@ -1,7 +1,7 @@
 import React from 'react';
 
 const styles = {
-  page: { paddingTop: '100px', paddingBottom: '64px', background: '#fff', minHeight: '100vh' },
+  page: { paddingTop: '140px', paddingBottom: '64px', background: '#fff', minHeight: '100vh' },
   wrapper: { maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' },
   hero: { textAlign: 'center', marginBottom: '80px' },
   heroTitle: { fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, color: '#000', marginBottom: '24px', lineHeight: 1.1 },

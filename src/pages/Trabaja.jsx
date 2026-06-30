@@ -1,7 +1,7 @@
 import React from 'react';
 
 const s = {
-  page: { paddingTop: '100px', paddingBottom: '64px', background: '#fff', minHeight: '100vh' },
+  page: { paddingTop: '140px', paddingBottom: '64px', background: '#fff', minHeight: '100vh' },
   wrapper: { maxWidth: '900px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' },
   icon: { width: '80px', height: '80px', background: '#f5f5f7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', margin: '0 auto 32px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' },
   h1: { fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, color: '#000', lineHeight: 1.1, marginBottom: '32px' },

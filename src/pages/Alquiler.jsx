@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const s = {
-  page: { paddingTop: '100px', paddingBottom: '64px', background: '#f5f5f7', minHeight: '100vh' },
+  page: { paddingTop: '140px', paddingBottom: '64px', background: '#f5f5f7', minHeight: '100vh' },
   wrapper: { maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' },
   header: { marginBottom: '48px' },
   h1: { fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 700, color: '#000', marginBottom: '8px' },

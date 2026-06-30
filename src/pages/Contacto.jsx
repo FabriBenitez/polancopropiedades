@@ -1,7 +1,7 @@
 import React from 'react';
 
 const s = {
-  page: { paddingTop: '100px', paddingBottom: '64px', background: '#f5f5f7', minHeight: '100vh' },
+  page: { paddingTop: '140px', paddingBottom: '64px', background: '#f5f5f7', minHeight: '100vh' },
   wrapper: { maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' },
   layout: { display: 'flex', gap: '64px', alignItems: 'flex-start' },
   left: { width: '300px', flexShrink: 0 },
