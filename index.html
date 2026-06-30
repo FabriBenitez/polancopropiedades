@@ -142,12 +142,24 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Card 1 -->
-            <a href="propiedad.html" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Penthouse" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-4 left-4 flex gap-2">
-                        <span class="bg-white/90 backdrop-blur text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Venta</span>
-                        <span class="bg-brand-accent text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Destacado</span>
+            <a href="propiedad.html" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal property-carousel">
+                <div class="relative h-64 overflow-hidden group/carousel">
+                    <div class="flex h-full transition-transform duration-500 carousel-track">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover shrink-0">
+                        <img src="https://images.unsplash.com/photo-1600607687931-cebfad2114ce?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover shrink-0">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover shrink-0">
+                    </div>
+                    <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1.5 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-prev"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1.5 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-next"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                    <div class="absolute bottom-4 w-full flex justify-center gap-1.5 z-10">
+                        <div class="w-2 h-2 rounded-full bg-white carousel-dot cursor-pointer"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                    </div>
+                    
+                    <div class="absolute top-4 left-4 flex gap-2 z-10">
+                        <span class="bg-white/90 backdrop-blur text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm pointer-events-none">Venta</span>
+                        <span class="bg-brand-accent text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm pointer-events-none">Destacado</span>
                     </div>
                 </div>
                 <div class="p-8">
@@ -167,11 +179,21 @@
             </a>
 
             <!-- Card 2 -->
-            <a href="#" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal" style="transition-delay: 100ms;">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Casa" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-4 left-4 flex gap-2">
-                        <span class="bg-white/90 backdrop-blur text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Venta</span>
+            <a href="propiedad.html" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal property-carousel" style="transition-delay: 100ms;">
+                <div class="relative h-64 overflow-hidden group/carousel">
+                    <div class="flex h-full transition-transform duration-500 carousel-track">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover shrink-0">
+                        <img src="https://images.unsplash.com/photo-1600607687931-cebfad2114ce?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover shrink-0">
+                    </div>
+                    <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1.5 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-prev"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1.5 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-next"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                    <div class="absolute bottom-4 w-full flex justify-center gap-1.5 z-10">
+                        <div class="w-2 h-2 rounded-full bg-white carousel-dot cursor-pointer"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                    </div>
+                    
+                    <div class="absolute top-4 left-4 flex gap-2 z-10">
+                        <span class="bg-white/90 backdrop-blur text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm pointer-events-none">Venta</span>
                     </div>
                 </div>
                 <div class="p-8">
@@ -191,11 +213,23 @@
             </a>
 
             <!-- Card 3 -->
-            <a href="#" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal" style="transition-delay: 200ms;">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Oficina" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-4 left-4 flex gap-2">
-                        <span class="bg-brand-dark/90 text-white backdrop-blur text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Alquiler</span>
+            <a href="propiedad.html" class="group block bg-white rounded-3xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 transform hover:-translate-y-2 reveal property-carousel" style="transition-delay: 200ms;">
+                <div class="relative h-64 overflow-hidden group/carousel">
+                    <div class="flex h-full transition-transform duration-500 carousel-track">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover shrink-0">
+                        <img src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover shrink-0">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover shrink-0">
+                    </div>
+                    <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1.5 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-prev"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1.5 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-next"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                    <div class="absolute bottom-4 w-full flex justify-center gap-1.5 z-10">
+                        <div class="w-2 h-2 rounded-full bg-white carousel-dot cursor-pointer"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                    </div>
+                    
+                    <div class="absolute top-4 left-4 flex gap-2 z-10">
+                        <span class="bg-brand-dark/90 text-white backdrop-blur text-xs font-bold px-3 py-1.5 rounded-full shadow-sm pointer-events-none">Alquiler</span>
                     </div>
                 </div>
                 <div class="p-8">

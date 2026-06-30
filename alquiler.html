@@ -133,11 +133,22 @@
         <div class="w-full lg:w-3/4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1 -->
-                <a href="propiedad.html" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 flex flex-col">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Oficina" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <button class="absolute top-3 right-3 text-white hover:text-brand-accent transition-colors"><i data-lucide="star" class="w-5 h-5 drop-shadow-md"></i></button>
-                        <div class="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm text-white flex divide-x divide-white/20">
+                <a href="propiedad.html" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 flex flex-col property-carousel">
+                    <div class="relative h-48 overflow-hidden group/carousel">
+                        <div class="flex h-full transition-transform duration-500 carousel-track">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                            <img src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                        </div>
+                        <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-prev"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                        <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-next"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        <div class="absolute bottom-10 w-full flex justify-center gap-1 z-10">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white carousel-dot cursor-pointer"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                        </div>
+                        <button class="absolute top-3 right-3 text-white hover:text-brand-accent transition-colors z-10"><i data-lucide="star" class="w-5 h-5 drop-shadow-md"></i></button>
+                        <div class="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm text-white flex divide-x divide-white/20 z-10">
                             <div class="flex-1 py-2 text-center text-sm font-medium">120 m²</div>
                             <div class="flex-1 py-2 text-center text-sm font-medium flex items-center justify-center gap-1">3 <i data-lucide="monitor" class="w-4 h-4"></i></div>
                         </div>
@@ -152,6 +163,92 @@
                     </div>
                 </a>
 
+                <!-- Card 2 -->
+                <a href="propiedad.html" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 flex flex-col property-carousel">
+                    <div class="relative h-48 overflow-hidden group/carousel">
+                        <div class="flex h-full transition-transform duration-500 carousel-track">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                            <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                        </div>
+                        <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-prev"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                        <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-next"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        <div class="absolute bottom-10 w-full flex justify-center gap-1 z-10">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white carousel-dot cursor-pointer"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                        </div>
+                        <button class="absolute top-3 right-3 text-white hover:text-brand-accent transition-colors z-10"><i data-lucide="star" class="w-5 h-5 drop-shadow-md"></i></button>
+                        <div class="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm text-white flex divide-x divide-white/20 z-10">
+                            <div class="flex-1 py-2 text-center text-sm font-medium">85 m²</div>
+                            <div class="flex-1 py-2 text-center text-sm font-medium flex items-center justify-center gap-1">2 <i data-lucide="bed-double" class="w-4 h-4"></i></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col">
+                        <p class="text-xs text-brand-textGray mb-1 text-center">Departamento moderno en alquiler...</p>
+                        <h3 class="text-sm font-bold text-center text-brand-dark mb-4 group-hover:text-brand-accent transition-colors">Las Cañitas, Palermo</h3>
+                        <div class="mt-auto flex justify-between items-center border-t border-gray-100 pt-4">
+                            <span class="font-bold text-brand-dark">USD 1.200 <span class="text-xs font-normal text-brand-textGray">/mes</span></span>
+                            <span class="text-xs text-brand-textGray font-mono">PBU99312</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="propiedad.html" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 flex flex-col property-carousel">
+                    <div class="relative h-48 overflow-hidden group/carousel">
+                        <div class="flex h-full transition-transform duration-500 carousel-track">
+                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                            <img src="https://images.unsplash.com/photo-1502672260266-1c1de2d9d00c?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                        </div>
+                        <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-prev"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                        <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-next"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        <div class="absolute bottom-10 w-full flex justify-center gap-1 z-10">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white carousel-dot cursor-pointer"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                        </div>
+                        <button class="absolute top-3 right-3 text-white hover:text-brand-accent transition-colors z-10"><i data-lucide="star" class="w-5 h-5 drop-shadow-md"></i></button>
+                        <div class="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm text-white flex divide-x divide-white/20 z-10">
+                            <div class="flex-1 py-2 text-center text-sm font-medium">55 m²</div>
+                            <div class="flex-1 py-2 text-center text-sm font-medium flex items-center justify-center gap-1">1 <i data-lucide="bed-double" class="w-4 h-4"></i></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col">
+                        <p class="text-xs text-brand-textGray mb-1 text-center">Monoambiente divisible amoblado...</p>
+                        <h3 class="text-sm font-bold text-center text-brand-dark mb-4 group-hover:text-brand-accent transition-colors">Belgrano, CABA</h3>
+                        <div class="mt-auto flex justify-between items-center border-t border-gray-100 pt-4">
+                            <span class="font-bold text-brand-dark">USD 750 <span class="text-xs font-normal text-brand-textGray">/mes</span></span>
+                            <span class="text-xs text-brand-textGray font-mono">PBU38491</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="propiedad.html" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 flex flex-col property-carousel">
+                    <div class="relative h-48 overflow-hidden group/carousel">
+                        <div class="flex h-full transition-transform duration-500 carousel-track">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover shrink-0">
+                        </div>
+                        <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-prev"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                        <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-1 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10 carousel-next"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        <div class="absolute bottom-10 w-full flex justify-center gap-1 z-10">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white carousel-dot cursor-pointer"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white/50 carousel-dot cursor-pointer"></div>
+                        </div>
+                        <button class="absolute top-3 right-3 text-white hover:text-brand-accent transition-colors z-10"><i data-lucide="star" class="w-5 h-5 drop-shadow-md"></i></button>
+                        <div class="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm text-white flex divide-x divide-white/20 z-10">
+                            <div class="flex-1 py-2 text-center text-sm font-medium">110 m²</div>
+                            <div class="flex-1 py-2 text-center text-sm font-medium flex items-center justify-center gap-1">3 <i data-lucide="bed-double" class="w-4 h-4"></i></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col">
+                        <p class="text-xs text-brand-textGray mb-1 text-center">Departamento 3 ambientes c/ cochera...</p>
+                        <h3 class="text-sm font-bold text-center text-brand-dark mb-4 group-hover:text-brand-accent transition-colors">Núñez, CABA</h3>
+                        <div class="mt-auto flex justify-between items-center border-t border-gray-100 pt-4">
+                            <span class="font-bold text-brand-dark">USD 1.500 <span class="text-xs font-normal text-brand-textGray">/mes</span></span>
+                            <span class="text-xs text-brand-textGray font-mono">PBU88129</span>
+                        </div>
+                    </div>
+                </a>
             </div>
             
         </div>

@@ -44,4 +44,47 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         revealObserver.observe(el);
     });
+    
+    // Inicializar carruseles de propiedades
+    const initCarousels = () => {
+        document.querySelectorAll('.property-carousel').forEach(carousel => {
+            const track = carousel.querySelector('.carousel-track');
+            const prevBtn = carousel.querySelector('.carousel-prev');
+            const nextBtn = carousel.querySelector('.carousel-next');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            if (!track) return;
+            
+            let currentIndex = 0;
+            const total = track.children.length;
+
+            const update = () => {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-white', i === currentIndex);
+                    dot.classList.toggle('bg-white/50', i !== currentIndex);
+                });
+            };
+
+            if (prevBtn) prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : total - 1;
+                update();
+            });
+
+            if (nextBtn) nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentIndex = (currentIndex < total - 1) ? currentIndex + 1 : 0;
+                update();
+            });
+            
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentIndex = i;
+                    update();
+                });
+            });
+        });
+    };
+    initCarousels();
 });
