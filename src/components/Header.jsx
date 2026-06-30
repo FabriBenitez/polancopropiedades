@@ -25,9 +25,12 @@ export default function Header() {
         
         <nav className="desktop-nav">
           <Link to="/" className="nav-link">Inicio</Link>
+          <Link to="/empresa" className="nav-link">La Empresa</Link>
           <Link to="/venta" className="nav-link">Venta</Link>
           <Link to="/alquiler" className="nav-link">Alquiler</Link>
           <Link to="/emprendimientos" className="nav-link">Emprendimientos</Link>
+          <Link to="/tasacion" className="nav-link">Tasación</Link>
+          <Link to="/trabaja" className="nav-link">Trabajá con nosotros</Link>
           <div className="contact-info">
             <span className="contact-item"><Phone size={14}/> 11 2626 8275</span>
             <span className="contact-item"><Mail size={14}/> info@polancopropiedades.com</span>
@@ -43,9 +46,13 @@ export default function Header() {
       <div className={`mobile-nav ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-nav-inner">
           <Link to="/" onClick={() => setMobileOpen(false)}>Inicio</Link>
+          <Link to="/empresa" onClick={() => setMobileOpen(false)}>La Empresa</Link>
           <Link to="/venta" onClick={() => setMobileOpen(false)}>Venta</Link>
           <Link to="/alquiler" onClick={() => setMobileOpen(false)}>Alquiler</Link>
           <Link to="/emprendimientos" onClick={() => setMobileOpen(false)}>Emprendimientos</Link>
+          <Link to="/tasacion" onClick={() => setMobileOpen(false)}>Tasación</Link>
+          <Link to="/trabaja" onClick={() => setMobileOpen(false)}>Trabajá con nosotros</Link>
+          <Link to="/contacto" onClick={() => setMobileOpen(false)}>Contacto</Link>
           <div className="mobile-contact">
             <a href="tel:1126268275"><Phone size={18}/> 11 2626 8275</a>
             <a href="mailto:info@polancopropiedades.com"><Mail size={18}/> info@polancopropiedades.com</a>
