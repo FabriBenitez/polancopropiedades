@@ -1,85 +1,74 @@
 import React from 'react';
-import { MapPin, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const s = {
+  page: { paddingTop: '100px', paddingBottom: '64px', background: '#f5f5f7', minHeight: '100vh' },
+  wrapper: { maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' },
+  header: { textAlign: 'center', marginBottom: '64px' },
+  h1: { fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, color: '#000', marginBottom: '16px' },
+  subtitle: { color: '#86868b', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto', fontWeight: 300, lineHeight: 1.7 },
+  list: { display: 'flex', flexDirection: 'column', gap: '32px' },
+  card: { background: '#fff', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,0.05)', border: '1px solid #e8e8e8', display: 'flex', minHeight: '380px', textDecoration: 'none', color: 'inherit', transition: 'box-shadow 0.3s' },
+  cardReverse: { flexDirection: 'row-reverse' },
+  imgWrap: { width: '42%', flexShrink: 0, position: 'relative', overflow: 'hidden' },
+  img: { width: '100%', height: '100%', objectFit: 'cover' },
+  statusBadge: { position: 'absolute', top: '16px', left: '16px', background: 'rgba(0,0,0,0.85)', color: '#fff', borderRadius: '999px', padding: '5px 14px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em' },
+  body: { padding: '40px 48px', display: 'flex', flexDirection: 'column', justifyContent: 'center', flex: 1 },
+  title: { fontSize: '2rem', fontWeight: 700, color: '#000', marginBottom: '8px' },
+  meta: { display: 'flex', gap: '16px', marginBottom: '20px', flexWrap: 'wrap' },
+  metaItem: { fontSize: '0.85rem', color: '#86868b', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '4px' },
+  deliveryTag: { background: '#f0f0f0', color: '#000', borderRadius: '999px', padding: '3px 12px', fontSize: '0.82rem', fontWeight: 500 },
+  desc: { fontSize: '0.98rem', color: '#555', lineHeight: 1.75, fontWeight: 300, marginBottom: '28px' },
+  amenitiesTitle: { fontSize: '0.75rem', fontWeight: 700, color: '#000', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' },
+  amenitiesGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '28px' },
+  amenityItem: { display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#555' },
+  checkIcon: { color: '#988864', flexShrink: 0 },
+  cta: { display: 'inline-block', background: '#000', color: '#fff', borderRadius: '12px', padding: '12px 28px', fontWeight: 500, fontSize: '0.95rem', cursor: 'pointer', textDecoration: 'none' },
+};
+
 const emprendimientos = [
-  {
-    id: 1,
-    title: "BLACK LIBERTADOR",
-    location: "Nuñez, CABA",
-    delivery: "Diciembre 2026",
-    status: "En Construcción",
-    description: "La redefinición del lujo en la Avenida Libertador. Unidades exclusivas con vistas panorámicas al río y a la ciudad. Diseño de vanguardia y amenities de categoría internacional.",
-    amenities: ["Piscina Infinity en Rooftop", "Gimnasio High-Tech", "Spa & Wellness Center", "Seguridad 24hs"],
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 2,
-    title: "BLACK SUCRE",
-    location: "Belgrano, CABA",
-    delivery: "Marzo 2027",
-    status: "Pozo",
-    description: "Una obra maestra arquitectónica en el corazón de Belgrano. Residencias de amplias dimensiones diseñadas para el confort absoluto. Entorno arbolado y residencial.",
-    amenities: ["Salón de Eventos", "Piscina Climatizada In/Out", "Business Center", "Estacionamiento de Cortesía"],
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
-  }
+  { id: 1, title: 'BLACK LIBERTADOR', location: 'Nuñez, CABA', delivery: 'Diciembre 2026', status: 'EN CONSTRUCCIÓN', description: 'La redefinición del lujo en la Avenida Libertador. Unidades exclusivas con vistas panorámicas al río y a la ciudad. Diseño de vanguardia y amenities de categoría internacional.', amenities: ['Piscina Infinity en Rooftop', 'Gimnasio High-Tech', 'Spa & Wellness Center', 'Seguridad 24hs'], img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
+  { id: 2, title: 'BLACK SUCRE', location: 'Belgrano, CABA', delivery: 'Marzo 2027', status: 'EN POZO', description: 'Una obra maestra arquitectónica en el corazón de Belgrano. Residencias de amplias dimensiones diseñadas para el confort absoluto. Entorno arbolado y residencial.', amenities: ['Salón de Eventos', 'Piscina Climatizada In/Out', 'Business Center', 'Estacionamiento de Cortesía'], img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80' },
 ];
 
 export default function Emprendimientos() {
   return (
-    <div className="pt-24 pb-16 bg-brand-gray min-h-screen">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        <div className="mb-16 text-center animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tight mb-4">Emprendimientos</h1>
-          <p className="text-brand-textGray text-lg md:text-xl max-w-2xl mx-auto">
-            Proyectos inmobiliarios de excelencia. Desarrollos pensados para superar las más altas expectativas.
-          </p>
+    <div style={s.page}>
+      <div style={s.wrapper}>
+        <div style={s.header}>
+          <h1 style={s.h1}>Emprendimientos</h1>
+          <p style={s.subtitle}>Proyectos inmobiliarios de excelencia. Desarrollos pensados para superar las más altas expectativas.</p>
         </div>
-
-        <div className="space-y-12">
+        <div style={s.list}>
           {emprendimientos.map((emp, idx) => (
-            <div key={emp.id} className={`group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} min-h-[400px]`}>
-              
-              <div className="lg:w-2/5 h-64 lg:h-auto relative overflow-hidden">
-                <img src={emp.image} alt={emp.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"/>
-                <div className="absolute top-4 left-4 bg-brand-dark/90 backdrop-blur text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest shadow-lg">
-                  {emp.status.toUpperCase()}
-                </div>
+            <div key={emp.id} style={{...s.card, ...(idx % 2 !== 0 ? s.cardReverse : {})}}
+              onMouseEnter={e => e.currentTarget.style.boxShadow='0 16px 40px rgba(0,0,0,0.10)'}
+              onMouseLeave={e => e.currentTarget.style.boxShadow='0 2px 12px rgba(0,0,0,0.05)'}
+            >
+              <div style={s.imgWrap}>
+                <img src={emp.img} alt={emp.title} style={s.img}/>
+                <span style={s.statusBadge}>{emp.status}</span>
               </div>
-              
-              <div className="lg:w-3/5 p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold text-brand-dark mb-2">{emp.title}</h2>
-                <div className="flex items-center gap-4 mb-6 text-sm text-brand-textGray font-medium">
-                  <span className="flex items-center gap-1"><MapPin size={16}/> {emp.location}</span>
-                  <span className="px-3 py-1 bg-gray-100 rounded-full text-brand-dark">Entrega: {emp.delivery}</span>
+              <div style={s.body}>
+                <h2 style={s.title}>{emp.title}</h2>
+                <div style={s.meta}>
+                  <span style={s.metaItem}>📍 {emp.location}</span>
+                  <span style={s.deliveryTag}>Entrega: {emp.delivery}</span>
                 </div>
-                
-                <p className="text-gray-600 font-light leading-relaxed mb-8">
-                  {emp.description}
-                </p>
-                
-                <div className="mb-8">
-                  <h4 className="text-sm font-bold text-brand-dark uppercase tracking-wider mb-3">Amenities Principales</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {emp.amenities.map((amenity, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                        <CheckCircle2 size={16} className="text-brand-accent"/> {amenity}
-                      </li>
-                    ))}
-                  </ul>
+                <p style={s.desc}>{emp.description}</p>
+                <p style={s.amenitiesTitle}>Amenities Principales</p>
+                <div style={s.amenitiesGrid}>
+                  {emp.amenities.map((a, i) => (
+                    <div key={i} style={s.amenityItem}>
+                      <span style={s.checkIcon}>✔</span> {a}
+                    </div>
+                  ))}
                 </div>
-                
-                <div className="mt-auto">
-                  <Link to={`/emprendimiento/${emp.id}`} className="inline-block bg-brand-dark text-white px-8 py-3 rounded-xl font-medium hover:bg-brand-accent transition-colors">
-                    Ver Proyecto Completo
-                  </Link>
-                </div>
+                <a href="#" style={s.cta}>Ver Proyecto Completo</a>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

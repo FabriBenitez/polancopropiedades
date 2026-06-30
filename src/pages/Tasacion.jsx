@@ -1,55 +1,65 @@
 import React from 'react';
-import { Calculator } from 'lucide-react';
+
+const s = {
+  page: { paddingTop: '100px', paddingBottom: '64px', background: '#fff', minHeight: '100vh' },
+  wrapper: { maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' },
+  layout: { display: 'flex', gap: '64px', alignItems: 'flex-start' },
+  left: { flex: 1 },
+  icon: { width: '72px', height: '72px', background: '#f5f5f7', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', marginBottom: '32px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' },
+  h1: { fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', fontWeight: 700, color: '#000', lineHeight: 1.1, marginBottom: '24px' },
+  desc: { fontSize: '1.05rem', color: '#555', fontWeight: 300, lineHeight: 1.8 },
+  right: { flex: 1 },
+  card: { background: '#fff', padding: '48px', borderRadius: '28px', boxShadow: '0 4px 32px rgba(0,0,0,0.06)', border: '1px solid #ebebeb' },
+  cardTitle: { fontSize: '1.3rem', fontWeight: 700, color: '#000', marginBottom: '28px' },
+  row: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' },
+  field: {},
+  label: { display: 'block', fontSize: '0.82rem', fontWeight: 500, color: '#444', marginBottom: '6px' },
+  input: { width: '100%', background: '#f5f5f7', border: '1px solid #e0e0e0', borderRadius: '12px', padding: '12px 16px', outline: 'none', fontSize: '0.92rem', boxSizing: 'border-box', fontFamily: 'inherit' },
+  textarea: { width: '100%', background: '#f5f5f7', border: '1px solid #e0e0e0', borderRadius: '12px', padding: '12px 16px', outline: 'none', fontSize: '0.92rem', resize: 'none', boxSizing: 'border-box', fontFamily: 'inherit', minHeight: '110px' },
+  btn: { width: '100%', background: '#000', color: '#fff', border: 'none', borderRadius: '14px', padding: '16px', fontWeight: 600, fontSize: '1rem', cursor: 'pointer', marginTop: '8px', transition: 'background 0.2s' },
+};
 
 export default function Tasacion() {
   return (
-    <div className="pt-24 pb-16 bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          
-          <div className="lg:w-1/2 animate-fade-in-up">
-            <div className="bg-brand-gray w-20 h-20 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-              <Calculator size={40} className="text-brand-accent"/>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-brand-dark tracking-tight mb-6 text-balance">
-              Conocé el Valor Real de tu Propiedad
-            </h1>
-            <p className="text-lg text-gray-600 font-light leading-relaxed mb-8">
+    <div style={s.page}>
+      <div style={s.wrapper}>
+        <div style={s.layout}>
+          <div style={s.left}>
+            <div style={s.icon}>🧮</div>
+            <h1 style={s.h1}>Conocé el Valor Real<br/>de tu Propiedad</h1>
+            <p style={s.desc}>
               Nuestro equipo de expertos realiza una evaluación exhaustiva del mercado, características de tu inmueble y tendencias actuales para entregarte una tasación precisa y profesional.
             </p>
           </div>
-
-          <div className="lg:w-1/2 w-full animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="bg-white p-8 md:p-12 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-gray-100">
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Nombre Completo</label>
-                    <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:bg-white focus:border-brand-accent transition-colors"/>
+          <div style={s.right}>
+            <div style={s.card}>
+              <h2 style={s.cardTitle}>Solicitar Tasación</h2>
+              <form>
+                <div style={s.row}>
+                  <div style={s.field}>
+                    <label style={s.label}>Nombre Completo</label>
+                    <input type="text" style={s.input} placeholder="Juan Pérez"/>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
-                    <input type="tel" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:bg-white focus:border-brand-accent transition-colors"/>
+                  <div style={s.field}>
+                    <label style={s.label}>Teléfono</label>
+                    <input type="tel" style={s.input} placeholder="+54 9 11 0000-0000"/>
                   </div>
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Dirección de la Propiedad</label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:bg-white focus:border-brand-accent transition-colors"/>
+                <div style={{marginBottom:'20px'}}>
+                  <label style={s.label}>Dirección de la Propiedad</label>
+                  <input type="text" style={s.input} placeholder="Av. del Libertador 1234, CABA"/>
                 </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Detalles Adicionales</label>
-                  <textarea rows="4" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:bg-white focus:border-brand-accent transition-colors resize-none"></textarea>
+                <div style={{marginBottom:'20px'}}>
+                  <label style={s.label}>Detalles Adicionales</label>
+                  <textarea style={s.textarea} placeholder="Superficie, ambientes, estado..."></textarea>
                 </div>
-                
-                <button type="button" className="w-full bg-brand-dark text-white font-medium py-4 rounded-xl hover:bg-brand-accent transition-all transform hover:-translate-y-1 shadow-lg text-lg">
-                  Solicitar Tasación
-                </button>
+                <button type="button" style={s.btn}
+                  onMouseEnter={e => e.currentTarget.style.background='#988864'}
+                  onMouseLeave={e => e.currentTarget.style.background='#000'}
+                >Solicitar Tasación</button>
               </form>
             </div>
           </div>
-
         </div>
       </div>
     </div>
